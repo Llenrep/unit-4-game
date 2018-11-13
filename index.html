@@ -1,115 +1,173 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
+<head>
 
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Crystal Collector</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-            crossorigin="anonymous">
-        <link rel="stylesheet"  href="assets/css/style.css">
-        <link rel="stylesheet"  href="assets/css/reset.css">
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Crystal Collector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous">
         </script>
 
-        <!-- <script src="main.js"></script> -->
-    </head>
+    <!-- <script src="main.js"></script> -->
+</head>
 
-    <body>
+<body>
+    <div class="container">
+
+
+        <center>
+            <h1><ins>Crystal Collector</ins></h1>
+            <hr>
+        </center>
+
         <div class="container">
 
-
-            <center>
-                <h1><ins>Crystal Collector</ins></h1><hr>
-            </center>
-
-            <div class="container">
-               
-                <div class="row">
-                    <div class="col-md-12">
-                            <center><p>Directions:</p></center>
-                            <center><p>You will be given a randomly generated number. There are four objects by which you can click on, each of which has a different value.
-                            They all, however, add on to your total. Get the total to equal the automatically generated number and you win the game. If you can't,
+            <div class="row">
+                <div class="col-md-12">
+                    <center>
+                        <p>Directions:</p>
+                    </center>
+                    <center>
+                        <p>You will be given a randomly generated number. There are four objects by which you can click
+                            on, each of which has a different value.
+                            They all, however, add on to your total. Get the total to equal the automatically generated
+                            number and you win the game. If you can't,
                             You lose and a new number will be generated. Try your best!
-                        </p></center><hr>
-                    </div>
-               </div>
+                        </p>
+                    </center>
+                    <hr>
+                </div>
+            </div>
 
-               <div class="row">
-                    <div class="col-md-3">
-                            <center><img src="assets/images/Transparent-Crystal-1.png" class="crystal-1" id="crystals" width="100" height="100">
-                        <p><ins>Crystal 1</ins></p></center>
+            <div class="row">
+                <div class="col-md-3">
+                    <center><img src="assets/images/Transparent-Crystal-1.png" class="crystal-1" id="crystals" width="100"
+                            height="100">
+                        <p><ins>Crystal 1</ins></p>
+                    </center>
 
-                    </div>
+                </div>
 
-                    <div class="col-md-3">
-                            <center><img src="assets/images/Transparent-Crystal-2.png" class="crystal-2" id="crystals" width="100" height="100">
-                        <p><ins>Crystal 2</ins></p></center>
-                       
-                    </div>
+                <div class="col-md-3">
+                    <center><img src="assets/images/Transparent-Crystal-2.png" class="crystal-2" id="crystals" width="100"
+                            height="100">
+                        <p><ins>Crystal 2</ins></p>
+                    </center>
 
-                    <div class="col-md-3">
-                            <center><img src="assets/images/Transparent-Crystal-3.png" class="crystal-3" id="crystals" width="100" height="100">
-                        <p><ins>Crystal 3</ins></p></center>
-                       
-                    </div>
+                </div>
 
-                    <div class="col-md-3">
-                            <center><img src="assets/images/Transparent-Crystal-4.png" class="crystal-4" id="crystals" width="100" height="100">
-                        <p><ins>Crystal 4</ins></p></center>
-                       
-                    </div>
+                <div class="col-md-3">
+                    <center><img src="assets/images/Transparent-Crystal-3.png" class="crystal-3" id="crystals" width="100"
+                            height="100">
+                        <p><ins>Crystal 3</ins></p>
+                    </center>
 
-                </div><hr>
+                </div>
 
-                <center><button id="start">
+                <div class="col-md-3">
+                    <center><img src="assets/images/Transparent-Crystal-4.png" class="crystal-4" id="crystals" width="100"
+                            height="100">
+                        <p><ins>Crystal 4</ins></p>
+                    </center>
+
+                </div>
+
+            </div>
+            <hr>
+
+            <center><button id="start">
                     <p>Start Game</p>
                 </button></center>
 
-                <div class="row">
-                    <div class="col-md-6" id="current-amount">
-                       <center><div class="col-md-6" class="your-amount" id="Box1"><ins>Your Amount</ins>: </div></center>
+            <div class="row">
+                <div class="col-md-6" id="current-amount">
+                    <center>
+                        <div class="col-md-6" class="your-amount" id="Box1"><ins>Your Amount</ins>: </div>
+                    </center>
 
-                    </div>
+                </div>
 
-                    <div class="col-md-6" id="requirement">
-                        <center><div class="col-md-6" class="required" id="Box2"><ins>Amount Required</ins>: </div></center>
-                        
-                    </div>
+                <div class="col-md-6" id="requirement">
+                    <center>
+                        <div class="col-md-6" class="required" id="Box2"><ins>Amount Required</ins>: </div>
+                    </center>
 
-                </div><hr>
-
-                
+                </div>
 
             </div>
-            
-            <footer class="footer">
-                    <p>
-            
-                    </p>
-                    <center>copyright &copy Pernell Louis-Pierre</center>
-            </footer>
-            
-           
+            <hr>
 
         </div>
-        <script rel="stylesheet" href="assets/javascript/game.js"></script>
-        <script>
-            var amount = 0;
-            var amountNeeded = Math.floor(Math.random() * 10) + 1;
 
-            $(document).ready(function() {
-                $("#Box1").append(amount);
-                $("#Box2").append(amountNeeded);
+        <footer class="footer">
+            <p>
+
+            </p>
+            <center>copyright &copy Pernell Louis-Pierre</center>
+        </footer>
+
+
+
+    </div>
+    <script rel="stylesheet" href="assets/javascript/game.js"></script>
+    <script>
+
+        var amount = 0;
+        var amountNeeded = Math.floor(Math.random() * 100) + 1;
+
+
+        $(document).ready(function () {
+
+            $("#Box1").append(amount);
+            $("#Box2").append(amountNeeded);
+
+            function assignNumber() { //helps assign each crystal with a random number when called
+                var crystalAmounts = Math.floor(Math.random() * 10) + 4;
+                console.log(crystalAmounts);
+            }
+            assignNumber()
+
+            // for (i = 0; i < 5; i++){
+            //     $("#crystals").append(assignNumber())
+            //     console.log(crystalAmounts)
+            // }
+
+            $("#crystals").on("click", function () {
+                var thing;
+                // the function above assigns crystal amount to the actual crystal (general function taking no variables)
+                // so it needs to be used somewhere
+                // take the crystals and assign them to do something when their clicked
+                // and take the value it represents and add it to the total amount variable (global) It's already on screen
+                // have the number constantly update
+                // set it so that when the current amount = the amout needed, the DOM alerts the user "You win".
             })
 
 
 
-        </script>
+            // document.getElementById("#crystals").onclick = function () { assignNumber() }
 
-    </body>
+            // <input type="button" value="Generate Code" onclick="document.getElementByID('#crystal-1').value = assignNumber()"></input>
+            // <input type="button" value="Generate Code" onclick="document.getElementByID('#crystal-2').value = assignNumber()"></input>
+            // <input type="button" value="Generate Code" onclick="document.getElementByID('#crystal-3').value = assignNumber()"></input>
+            // <input type="button" value="Generate Code" onclick="document.getElementByID('#crystal-4').value = assignNumber()"></input>
+
+            // function addToTotal(){
+            //     var total;
+            // }
+
+        })
+
+
+
+    </script>
+
+</body>
 
 </html>

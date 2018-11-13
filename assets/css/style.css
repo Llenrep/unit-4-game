@@ -22,6 +22,10 @@ img{
     border: 0.7px solid blue;
 }
 
+.col-md-3:hover{
+    color: #0ff;
+}
+
 #Box{
      
     width: 500px;
