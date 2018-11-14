@@ -45,10 +45,16 @@
                     <hr>
                 </div>
             </div>
+            <center>
+                <div>
+                    <p class="wins">Wins: </p>
+                    <p class="losses">Losses: </p>
+                </div>
+            </center>
 
             <div class="row">
                 <div class="col-md-3">
-                    <center><img src="assets/images/Transparent-Crystal-1.png" class="crystal-1" id="crystals" width="100"
+                    <center><img src="assets/images/Transparent-Crystal-1.png" class="crystal-1" id="crystal-1" width="100"
                             height="100">
                         <p><ins>Crystal 1</ins></p>
                     </center>
@@ -56,7 +62,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <center><img src="assets/images/Transparent-Crystal-2.png" class="crystal-2" id="crystals" width="100"
+                    <center><img src="assets/images/Transparent-Crystal-2.png" class="crystal-2" id="crystal-2" width="100"
                             height="100">
                         <p><ins>Crystal 2</ins></p>
                     </center>
@@ -64,7 +70,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <center><img src="assets/images/Transparent-Crystal-3.png" class="crystal-3" id="crystals" width="100"
+                    <center><img src="assets/images/Transparent-Crystal-3.png" class="crystal-3" id="crystal-3" width="100"
                             height="100">
                         <p><ins>Crystal 3</ins></p>
                     </center>
@@ -72,7 +78,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <center><img src="assets/images/Transparent-Crystal-4.png" class="crystal-4" id="crystals" width="100"
+                    <center><img src="assets/images/Transparent-Crystal-4.png" class="crystal-4" id="crystal-4" width="100"
                             height="100">
                         <p><ins>Crystal 4</ins></p>
                     </center>
@@ -119,7 +125,10 @@
     <script rel="stylesheet" href="assets/javascript/game.js"></script>
     <script>
 
+        var wins = 0;
+        var losses = 0;
         var amount = 0;
+        var crystalValue = 0;
         var amountNeeded = Math.floor(Math.random() * 100) + 1;
 
 
@@ -128,39 +137,49 @@
             $("#Box1").append(amount);
             $("#Box2").append(amountNeeded);
 
-            function assignNumber() { //helps assign each crystal with a random number when called
-                var crystalAmounts = Math.floor(Math.random() * 10) + 4;
-                console.log(crystalAmounts);
-            }
-            assignNumber()
-
-            // for (i = 0; i < 5; i++){
-            //     $("#crystals").append(assignNumber())
-            //     console.log(crystalAmounts)
-            // }
-
-            $("#crystals").on("click", function () {
-                var thing;
-                // the function above assigns crystal amount to the actual crystal (general function taking no variables)
-                // so it needs to be used somewhere
-                // take the crystals and assign them to do something when their clicked
                 // and take the value it represents and add it to the total amount variable (global) It's already on screen
                 // have the number constantly update
                 // set it so that when the current amount = the amout needed, the DOM alerts the user "You win".
+
+            $("#crystal-1").on("click", function () {
+                 //helps assign each crystal with a random number when called
+                var crystalValue = Math.floor(Math.random() * 10) + 4; 
+                console.log("The value of this crystal is: " + crystalValue);
+                amount += crystalValue; 
+                console.log(amount)  
+                $("Box1").append(amount)
+            })
+           
+            $("#crystal-2").on("click", function () {
+                var crystalValue = Math.floor(Math.random() * 10) + 4;
+                console.log("The value of this crystal is: " + crystalValue);
+                amount += crystalValue;        
+            })
+           
+            $("#crystal-3").on("click", function () {
+                var crystalValue = Math.floor(Math.random() * 10) + 4;
+                console.log("The value of this crystal is: " + crystalValue);
+                amount += crystalValue;         
+            })
+            
+            $("#crystal-4").on("click", function () {
+                var crystalValue = Math.floor(Math.random() * 10) + 4;
+                console.log("The value of this crystal is: " + crystalValue);
+                amount += crystalValue;         
             })
 
+            if (amount === amountNeeded){
+                wins++;
+                alert("you won! nice job")
+                $(".wins").html("<p>Wins: </p>" + wins)
+            }  
 
-
-            // document.getElementById("#crystals").onclick = function () { assignNumber() }
-
-            // <input type="button" value="Generate Code" onclick="document.getElementByID('#crystal-1').value = assignNumber()"></input>
-            // <input type="button" value="Generate Code" onclick="document.getElementByID('#crystal-2').value = assignNumber()"></input>
-            // <input type="button" value="Generate Code" onclick="document.getElementByID('#crystal-3').value = assignNumber()"></input>
-            // <input type="button" value="Generate Code" onclick="document.getElementByID('#crystal-4').value = assignNumber()"></input>
-
-            // function addToTotal(){
-            //     var total;
-            // }
+            if (amount > amountNeeded) {
+                losses++;
+                alert("you lose! try again")
+                $(".losses").html("<p>Losses: </p>" + losses)
+            }
+            console.log(amount)
 
         })
 
